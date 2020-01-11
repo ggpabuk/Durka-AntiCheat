@@ -1,0 +1,8 @@
+# Файл компиляции
+setup.py
+# Тестовые файлы
+*_test.py
+
+# listdlls
+listdlls.exe
+listdlls64.exe
