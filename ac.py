@@ -16,7 +16,7 @@ def main():
 	try:
 		if arg[1] == "--debug":
 			debug = True
-		elif arg[1] == "-h" or "--help":
+		elif arg[1] == "-h" or arg[1] == "--help":
 			print(help_txt)
 			sys.exit()
 	except IndexError:
