@@ -1,19 +1,12 @@
 # nothAC
 ### Написанный с нуля анти-чит
 
-```
-Start instruction:
-1. Run "acA.exe" (Запустите "acA.exe")
-2. Launch the game (Запустите игру)
-3. Done (Готово!)
-```
+> Start instruction:
+1. Run "acA.exe"
+2. Launch the game 
+3. Done
 ----------------------------------------------------------------------------------
-```
-Note: This is an OBT (Open Beta Testing) version of the program, break it to find bugs.
-Заметка: Это ОБТ (Открытое бета тестирование) версия программы, ломайте её, что бы найти баги.
-```
+*Note: This is an OBT (Open Beta Testing) version of the program, break it to find bugs.*
 ----------------------------------------------------------------------------------
-```
-Request: Do not change file names if this is not part of the testing. 
-(Просьба: Не изменяйте названия файлов, если это не часть тестирования.)
-```
+*Request: Do not change file names if this is not part of the testing.*
+----------------------------------------------------------------------------------
