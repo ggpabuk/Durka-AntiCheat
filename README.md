@@ -1,5 +1,5 @@
 # nothAC
-### Написанный с нуля анти-чит
+### Stupidly AC
 
 > Start instruction:
 1. Run "acA.exe"
