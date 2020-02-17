@@ -25,13 +25,14 @@ for i in argv:
 	else:
 		proc = i
 
-# Main Anti-Cheat process
+# Generate first signature
 try:
 	sign = subprocess.check_output('listdlls.exe {proc}')
 except FileNotFoundError:
 	exceptions.listdlls()
 	sign = subprocess.check_output('listdlls.exe {proc}')
 
+# Main Anti-Cheat process
 while True:
 	sign_new = subprocess.check_output('listdlls.exe {proc}')
 	if sign_new != sign:
