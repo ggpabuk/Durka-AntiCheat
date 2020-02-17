@@ -1,5 +1,5 @@
 {
     "process": "opera.exe",
     "time_sleep": 12,
-    "help_text": "Args:\nHelp: -h OR --help\nDebug Mode: --debug"
+    "help_text": "Args:\nHelp: -h OR --help\nDebug Mode: --debug\nSpecify a different process: main.exe example.exe\n\n(c) Copyright 2020 ggpabuk"
 }
