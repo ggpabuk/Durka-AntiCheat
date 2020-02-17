@@ -1,8 +1,12 @@
 # Compilation file
-#setup.py
+setup.py
 # Test files
 *_test.py
 
 # listdlls
 listdlls.exe
 listdlls64.exe
+# py3
+/__pycache__
+# assembly
+/build_windows
