@@ -2,7 +2,7 @@
 ### Stupidly Anti-Cheat
 
 > Start instruction:
-1. Run "acA.exe"
+1. Run "main.exe"
 2. Launch the game 
 3. Done
 ----------------------------------------------------------------------------------
