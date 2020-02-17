@@ -1,6 +1,6 @@
-# Файл компиляции
-setup.py
-# Тестовые файлы
+# Compilation file
+#setup.py
+# Test files
 *_test.py
 
 # listdlls

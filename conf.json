@@ -1,0 +1,5 @@
+{
+    "process": "opera.exe",
+    "time_sleep": 12,
+    "help_text": "Args:\nHelp: -h OR --help\nDebug Mode: --debug"
+}
