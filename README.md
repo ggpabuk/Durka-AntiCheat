@@ -1,5 +1,5 @@
 # nothAC
-### Stupidly AC
+### Stupidly Anti-Cheat
 
 > Start instruction:
 1. Run "acA.exe"
