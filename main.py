@@ -6,13 +6,13 @@ import os
 import sys
 
 argv = sys.argv
-debug = False				# Enable debug by default?
+debug = False		      # Enable debug by default?
 
 with open('conf.json') as target:
 	conf = json.load(target)
 
 proc = conf['process']        # Process name
-sl = conf['time_sleep']    # Delay before next check
+sl = conf['time_sleep']       # Delay before next check
 help_txt = conf['help_text']  # Help text
 
 # Working with startup arguments
