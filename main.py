@@ -21,6 +21,7 @@ Help: -h OR --help
 Debug Mode: --debug
 Specify a different process: main.exe example.exe
 
+! MIT licensed !
 (c) Copyright 2020 ggpabuk
 '''
 
@@ -28,7 +29,7 @@ Specify a different process: main.exe example.exe
 for i in argv:
 	if i == '--debug':
 		debug = True
-	elif i == '-h' or i == '--help':
+	elif i == '-H' or i == '--help':
 		print(help_txt)
 		sys.exit()
 	else:
