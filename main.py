@@ -1,19 +1,28 @@
 import exceptions
 import subprocess
-from time import sleep
 import json
 import os
 import sys
+from time import sleep
 
 argv = sys.argv
-debug = False		      # Enable debug by default?
+debug = False		          # Enable debug by default? (no)
 
 with open('conf.json') as target:
 	conf = json.load(target)
 
 proc = conf['process']        # Process name
-sl = conf['time_sleep']       # Delay before next check
-help_txt = conf['help_text']  # Help text
+sl = conf['delay']            # Delay before next check
+
+# Help text
+help_txt = '''
+Args:
+Help: -h OR --help
+Debug Mode: --debug
+Specify a different process: main.exe example.exe
+
+(c) Copyright 2020 ggpabuk
+'''
 
 # Working with startup arguments
 for i in argv:
@@ -27,19 +36,19 @@ for i in argv:
 
 # Generate first signature
 try:
-	sign = subprocess.check_output('listdlls.exe {proc}')
+	sign = subprocess.check_output(f'listdlls.exe {proc}')
 except FileNotFoundError:
 	exceptions.listdlls()
-	sign = subprocess.check_output('listdlls.exe {proc}')
+	sign = subprocess.check_output(f'listdlls.exe {proc}')
 
-# Main Anti-Cheat process
+# Main Anti-Cheat code
 while True:
-	sign_new = subprocess.check_output('listdlls.exe {proc}')
+	sign_new = subprocess.check_output(f'listdlls.exe {proc}')
 	if sign_new != sign:
-		os.system('taskkill /f /im {proc}')
+		os.system(f'taskkill /f /im {proc}')
 		break
 	elif sign_new != sign and debug:
-		os.system('taskkill /f /im {proc}')
+		os.system(f'taskkill /f /im {proc}')
 		print('Signatures not match')
 		break
 	elif sign_new == sign and debug:
