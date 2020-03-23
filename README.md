@@ -7,7 +7,7 @@
 
 #### How to use
 1. Download this
-1. Run `main.py `
+1. Run `main.exe`
 1. Done
 
 #### Orderly meme
