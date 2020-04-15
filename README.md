@@ -14,7 +14,7 @@
 | ~~hard_mode~~ (in dev)      | bool          | Enables or disables additional protection levels (recommended) |
 
 #### How to use
-1. Download [this](github.com/ggpabuk/Durka-AntiCheat/releases/latest) and install cx_freeze (`pip install cx_freeze` (`pip3 install cx_freeze`) on Linux)
+1. Download [this](github.com/ggpabuk/Durka-AntiCheat/releases/latest) and install cx_freeze (`pip install cx_freeze` (`pip3 install cx_freeze` on Linux))
 1. Change the configuration file (`config.yaml`) for your project
 1. Run `py setup.py build` (`python3 setup.py build` on Linux)
 1. Congratulations, you compiled anti-cheat, now go to the `build` directory. The anti-cheat will be in the `exe.xxx` directory
