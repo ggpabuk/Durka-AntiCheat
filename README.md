@@ -6,10 +6,10 @@
 - ~~Dirty code~~
 
 #### Configuration
-| Config Option	  | Value Type    | Description  	                                |
+| Config Option	  | Value Type    | Description  	                                  |
 | --------------- | ------------- | ----------------------------------------------- |
 | process         | string        | The process followed by anti-cheat              |
-| delay           | int           | Delay between checks                            |
+| delay           | float         | Delay between checks                            |
 | debug           | bool          | Enables debug mode (disable before compilation) |
 | ~~hard_mode~~ (in dev)      | bool          | Enables or disables additional protection levels (recommended) |
 
