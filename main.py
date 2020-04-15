@@ -1,60 +1,46 @@
-import exceptions
-import subprocess
-import json
-import os
-import sys
 from time import sleep
 
-argv = sys.argv
-debug = False		          # Enable debug by default? (no)
+import requests
+import subprocess
+import yaml
+import os
 
-with open('conf.json') as target:
-	conf = json.load(target)
+with open('config.yaml') as target:
+	cfg = yaml.load(target, Loader=yaml.FullLoader)
 
-proc = conf['process']        # Process name
-sl = conf['delay']            # Delay before next check
+# Take the variables from the configuration file
+# To change these variables, edit "config.yaml"
+process = cfg['process']
+delay = cfg['delay']
+debug = cfg['debug']
 
-# Help text
-help_txt = '''
-Args:
-Help: -h OR --help
-Debug Mode: --debug
-Specify a different process: main.exe example.exe
+# Download listdlls if it was not found earlier
+def get_listdlls():
+	target = open('listdlls.exe', 'wb')
+	ufr = requests.get('https://www.dropbox.com/s/by4ca7zwzcqyt12/Listdlls.exe')
+	target.write(ufr.content)
 
-! MIT licensed !
-(c) Copyright 2020 ggpabuk
-'''
-
-# Working with startup arguments
-for i in argv:
-	if i == '--debug':
-		debug = True
-	elif i == '-H' or i == '--help':
-		print(help_txt)
-		sys.exit()
-	else:
-		proc = i
+	target.close()
 
 # Generate first signature
 try:
-	sign = subprocess.check_output(f'listdlls.exe {proc}')
+	signature = subprocess.check_output(f'listdlls.exe {process}')
 except FileNotFoundError:
-	exceptions.listdlls()
-	sign = subprocess.check_output(f'listdlls.exe {proc}')
+	get_listdlls()
+
+	signature = subprocess.check_output(f'listdlls.exe {process}')
 
 # Main Anti-Cheat code
 while True:
-	sign_new = subprocess.check_output(f'listdlls.exe {proc}')
-	if sign_new != sign:
-		os.system(f'taskkill /f /im {proc}')
+	signature_new = subprocess.check_output(f'listdlls.exe {process}')
+	if signature_new != signature:
+		os.system(f'taskkill /f /im {process}')
 		break
-	elif sign_new != sign and debug:
-		os.system(f'taskkill /f /im {proc}')
+	elif signature_new != signature and debug:
+		os.system(f'taskkill /f /im {process}')
 		print('Signatures not match')
 		break
-	elif sign_new == sign and debug:
+	elif signature_new == signature and debug:
 		print('Signatures match')
 
-	sleep(sl)
-
-sys.exit()
+	sleep(delay)

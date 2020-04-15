@@ -1,0 +1,8 @@
+#The process followed by anti-cheat
+process: "game.exe"
+#Delay between checks
+delay: 25
+#Enables debug mode (disable before compilation)
+debug: true
+#Enables or disables additional protection levels (recommended)
+hard_mode: true
