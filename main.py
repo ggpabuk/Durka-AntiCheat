@@ -33,7 +33,7 @@ except FileNotFoundError:
 # Main Anti-Cheat code
 while True:
 	signature_new = subprocess.check_output(f'listdlls.exe {process}')
-	if signature_new != signature:
+	if signature_new != signature and not debug:
 		os.system(f'taskkill /f /im {process}')
 		break
 	elif signature_new != signature and debug:
